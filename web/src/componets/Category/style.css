@@ -1,0 +1,29 @@
+.btn-category {
+    margin-top: 10px;
+    color: #FFF;
+    background-color: transparent;
+    border: solid;
+    height: 60px;
+    line-height: 30px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.category {
+    border: solid;
+    color: #FFF;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+.category h3{
+    color: #FFF;
+
+}
