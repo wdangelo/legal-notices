@@ -1,0 +1,16 @@
+.control-painel {
+    font-size: 30px;
+    color: #fff;
+    border-bottom: 50px;
+}
+
+
+.clickable {
+    cursor: pointer;
+    
+}
+
+.disable {
+    cursor: not-allowed;
+    color: lightgray;
+}
