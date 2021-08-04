@@ -1,7 +1,24 @@
 .control-painel {
-    font-size: 30px;
+    font-size: 18px;
     color: #fff;
-    border-bottom: 50px;
+    
+}
+
+
+.control-painel .btn-ctrl {
+    border-radius: 100%;
+    border: none;
+    background-color: #C9D200;
+    padding: 5px;
+    margin: 10px;
+}
+
+.control-painel .btn-exit {
+    border-radius: 100%;
+    border: none;
+    background-color: lightcoral;
+    padding: 5px;
+    margin-left: 10px;
 }
 
 

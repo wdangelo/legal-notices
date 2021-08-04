@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom'
+import { FiX } from "react-icons/fi"
 import {FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from "react-icons/fa"
 import "./style.css"
 
@@ -9,6 +11,8 @@ export default function ControlPainel(props: any) {
 
     const firstPageClass = isFirstPage ? 'disable' : 'clickable';
     const lastPageClass = isLastPage ? 'disable' : 'clickable';
+
+    const history = useHistory()
 
     function goToFirstPage() {
         if (!isFirstPage) setPageNumber(1);
@@ -26,15 +30,23 @@ export default function ControlPainel(props: any) {
         if (!isLastPage) setPageNumber(numPages);
     };
 
+    function handleExit() {
+        sessionStorage.clear()
+        history.push('/')
+      }
+
     return(
         <div className="control-painel">
-
-            <i onClick={goToFirstPage} className={firstPageClass}><FaAngleDoubleLeft  size="70" color="#fff" /></i>
-            <i onClick={goToPreviousPage} className={firstPageClass} ><FaAngleLeft  size="70" color="#fff"/></i>
+            <button className="btn-ctrl"><i onClick={goToFirstPage} className={firstPageClass}><FaAngleDoubleLeft  size="30" color="#fff" /></i></button>
+            
+            <button className="btn-ctrl"><i onClick={goToPreviousPage} className={firstPageClass}><FaAngleLeft  size="30" color="#fff" /></i></button>
             
             <span>Page {pageNumber} of {numPages}</span>
-            <i onClick={goToNextPage} className={lastPageClass} ><FaAngleRight size="70" color="#fff"/></i>
-            <i onClick={goToLastPage} className={lastPageClass}  ><FaAngleDoubleRight size="70" color="#fff" /></i>
+            <button className="btn-ctrl"><i onClick={goToNextPage} className={lastPageClass} ><FaAngleRight size="30" color="#fff"/></i></button>
+            <button className="btn-ctrl"><i onClick={goToLastPage} className={lastPageClass}  ><FaAngleDoubleRight size="30" color="#fff" /></i></button>
+
+            <button className="btn-exit" onClick={handleExit} ><FiX size="30" color="#fff" /></button>
+            
             
         </div>
     )
