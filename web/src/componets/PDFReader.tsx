@@ -12,6 +12,7 @@ export default function PDFReader(props: any) {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
+    const [isPdfPath, setIsPdfPath] = useState('');
 
 
     function onDocumentLoadSuccess({ numPages }: any) {
@@ -31,7 +32,7 @@ export default function PDFReader(props: any) {
                 <ControlPainel numPages={numPages} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
                 
                 <Document
-                    file="/assets/docs/1_Direitos e deveres.pdf"
+                    file={isPdfPath}
                     onLoadSuccess={onDocumentLoadSuccess}
                 >
                 <Page pageNumber={pageNumber} />
