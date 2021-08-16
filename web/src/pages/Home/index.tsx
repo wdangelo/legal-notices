@@ -4,7 +4,9 @@ import Category from "../../componets/Category"
 
 import './style.css'
 
-export default function Home() {
+
+export default function Home(props: any) {
+
     return (
         <div className="HomeBody">
             <NavHome />

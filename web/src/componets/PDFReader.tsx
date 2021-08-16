@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useParams } from "react-router-dom";
 import { Document, Page, pdfjs } from 'react-pdf';
 import "./loader.css"
 import Loader from './Loader';
@@ -7,12 +8,18 @@ import NavHome from './NavHome';
 //import Loader from './Loader'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+interface Iparams {
+    name: string;
+}
+
 export default function PDFReader(props: any) {
 
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
-    const [isPdfPath, setIsPdfPath] = useState('');
+    const { name }: Iparams = useParams();
+    const path = `/assets/docs/${name}`
+
 
 
     function onDocumentLoadSuccess({ numPages }: any) {
@@ -30,9 +37,8 @@ export default function PDFReader(props: any) {
         <section id="pdf-section">
             <div className="d-flex justify-content-center align-items-center flex-column">
                 <ControlPainel numPages={numPages} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
-                
                 <Document
-                    file={isPdfPath}
+                    file={path}
                     onLoadSuccess={onDocumentLoadSuccess}
                 >
                 <Page pageNumber={pageNumber} />

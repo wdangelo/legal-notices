@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+
+    font: 400 14px Asap, sans-serif;
+    background: linear-gradient(329.54deg, #003641 0%, #00AE9D 100%);
+    -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea, select {
+    font: 400 18px Asap, sans-serif;
+}

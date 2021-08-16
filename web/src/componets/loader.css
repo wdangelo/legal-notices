@@ -1,3 +1,9 @@
+@keyframes gira {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .LoaderBody {
     margin: 0;
     padding: 0;
@@ -8,4 +14,9 @@
     background: linear-gradient(329.54deg, #003641 0%, #00AE9D 100%);
     overflow-x: hidden;
     overflow-y: hidden;
+    
+}
+
+.loader {
+    animation: gira 8s linear infinite;
 }

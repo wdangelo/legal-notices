@@ -1,0 +1,29 @@
+.btn-notice {
+
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+.btn-notice button{
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+.btn-notice hr {
+    color: transparent;
+}
+
+.btn-notice h3 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-notice img {
+    width: 40%;
+    height: 40%;
+}
