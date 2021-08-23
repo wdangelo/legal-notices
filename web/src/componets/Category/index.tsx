@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import "./style.css"
 
 import folha from '../../assets/icons/folha.svg';
-import central from '../../assets/icons/central.svg';
+import central from '../../assets/icons/centralatendimento.svg';
 import map from '../../assets/icons/map.svg';
 
 const ListPDF = {

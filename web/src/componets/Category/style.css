@@ -22,6 +22,12 @@
     margin: 50px;
 }
 
+.category button:hover{
+    background: linear-gradient(329.54deg, #003641 0%, #00AE9D 100%);
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
 
 .category h3 {
     margin-top: 10px;
