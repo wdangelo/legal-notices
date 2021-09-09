@@ -1,13 +1,11 @@
 import express from "express";
 
-import { router } from "./routes";
-
-import "./database";
+import { categoriesRoutes } from "./routes/categories.routes";
 
 const app = express();
 
 app.use(express.json());
 
-app.use(router);
+app.use("/categories", categoriesRoutes)
 
-app.listen(3330, () => console.log("Server is running in https://localhost:3330"));
+app.listen(3330, () => console.log("Server is running"));
