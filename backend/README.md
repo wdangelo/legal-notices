@@ -1,5 +1,5 @@
-# Projeto rentx_
-## Ignite
-### Curso de aceleração para devs da plataforma de ensino Rocktseat
+# Projeto API Legal Notices
+## 
+### API de cadastro de novos usuário / novos avisos / avisos legais
 
-Refazendo aplicação do cuso Ignite para tentar suprir duvidas
+A API ainda esta em processo de modelamento 
