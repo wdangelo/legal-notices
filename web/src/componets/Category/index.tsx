@@ -25,6 +25,11 @@ export default function Category(){
         sessionStorage.clear()
         history.push(`/notice`)
     }
+
+    function handleCallCEnter(){
+        sessionStorage.clear()
+        history.push(`/callcenter`)
+    }
     return(
         <>
         <div className="category-body">
@@ -33,7 +38,7 @@ export default function Category(){
                 <tr>
                     <td>
 
-                        <div onClick={handlePDF} className="category">
+                        <div onClick={handleCallCEnter} className="category">
                             
                             <button>
                                 <img src={central} alt="Pasta de aviso legais" />

@@ -1,19 +1,11 @@
 import { Router } from "express";
-import { NoticesRepository } from "../modules/Notices/repositories/NoticesRepository";
-import { CreateNoticesService } from "../modules/Notices/services/CreateNoticesServices";
+
+import { createNoticesController } from "../modules/Notices/useCases/createSpecification";
 
 const noticesRoutes = Router();
 
-const noticesRepository = new NoticesRepository();
-
 noticesRoutes.post("/", (request, response) => {
-    const { title } = request.body;
-
-    const createNoticesServices = new CreateNoticesService(noticesRepository);
-
-    createNoticesServices.execute({ title })
-
-    return response.status(201).send()
+    return createNoticesController.handle(request, response);
 })
 
 export { noticesRoutes };

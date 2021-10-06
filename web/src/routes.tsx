@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from "./pages/Home"
 import PDFReader from './componets/PDFReader';
 import Notice from './pages/Notice';
+import CallCenter from './pages/CallCenter';
 
 export default function Routes() {
     return(
@@ -13,6 +14,7 @@ export default function Routes() {
                 <Route exact path="/" component={Home}/>
                 <Route path="/category/:name" component={PDFReader}/>
                 <Route path="/notice" component={Notice}/>
+                <Route path="/callcenter" component={CallCenter}/>
               
             </Switch>
         </BrowserRouter>

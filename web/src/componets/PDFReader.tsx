@@ -18,9 +18,9 @@ export default function PDFReader(props: any) {
     const [pageNumber, setPageNumber] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const { name }: Iparams = useParams();
-    const path = `/assets/docs/${name}`
+    const path = `/assets/docs/notices/atendimento/${name}`
 
-
+    console.log(path)
 
     function onDocumentLoadSuccess({ numPages }: any) {
         setNumPages(numPages);

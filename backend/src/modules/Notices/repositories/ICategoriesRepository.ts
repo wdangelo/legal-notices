@@ -2,7 +2,8 @@ import { Category } from "../model/Category";
 
 interface ICategoryDTO {
     name: string;
-    title: string
+    title: string;
+    path: string
 }
 
 interface ICategoriesRepository {
