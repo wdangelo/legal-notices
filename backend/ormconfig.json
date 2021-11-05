@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "username": "administrator",
+    "password": "wlu@2341",
+    "database": "database",
+    "migrations": ["./src/database/migrations/*.ts"],
+    "entities": ["./src/modules/**/*.ts"],
+    "cli": {
+        "migrationsDir": "./src/database/migrations"
+    }
+}

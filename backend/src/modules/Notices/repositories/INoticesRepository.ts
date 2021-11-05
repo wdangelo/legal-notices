@@ -1,4 +1,4 @@
-import { Notices } from "../model/Notices";
+import { Notices } from "../entities/Notices";
 
 interface ICreateNoticesDTO {
     title: string;

@@ -33,7 +33,8 @@ function index() {
     return (
         <div className="btn-notices-boddy">
             <div className="btn-notice">
-                <tr>
+
+                <tr onClick={handlePDF}>
                     <td>
                         <button onClick={handlePDF}>
                             <img src={folha} alt="Botão de avisos" />
@@ -41,15 +42,18 @@ function index() {
                     </td>
                     <td><h3>Central de Atendimento</h3></td>
                 </tr>
+
                 <hr></hr>
-                <tr>
+                
+                <tr onClick={handlePDF2}>
                     <td>
-                        <button onClick={handlePDF2}>
+                        <button >
                             <img src={folha} alt="Botão de avisos" />
                         </button>
                     </td>
                     <td><h3>Atendimento ao Cooperado</h3></td>
                 </tr>
+                
             </div>
             
         </div>

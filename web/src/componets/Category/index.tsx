@@ -6,12 +6,14 @@ import folha from '../../assets/icons/folha.svg';
 import central from '../../assets/icons/centralatendimento.svg';
 import map from '../../assets/icons/map.svg';
 
+
 const ListPDF = {
     id: 1,
     name: "cartaz.pdf",
     id_category: 1
     
 }
+
 
 export default function Category(){
     const history = useHistory();

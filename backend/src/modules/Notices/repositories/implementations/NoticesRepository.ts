@@ -1,4 +1,4 @@
-import { Notices } from "../../model/Notices";
+import { Notices } from "../../entities/Notices";
 import { ICreateNoticesDTO, INoticesRepository } from "../INoticesRepository";
 
 class NoticesRepository implements INoticesRepository {

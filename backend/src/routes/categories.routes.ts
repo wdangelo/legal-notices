@@ -1,26 +1,21 @@
-import { response, Router } from "express";
+import { Router } from "express";
 import multer from "multer";
+import "reflect-metadata";
 
-import { createCategoryController } from "../modules/Notices/useCases/createCategory";
-import { importCategoryController } from "../modules/Notices/useCases/importCategory";
-import { listcategoriesController } from "../modules/Notices/useCases/listCategories";
+import uploadConfig from "../config/uploads";
+import { CreateCategorycontroller } from "../modules/Notices/useCases/createCategory/CreateCategoryController";
+import { ListCategoriesController } from "../modules/Notices/useCases/listCategories/ListCategoriesController";
 
 const categoriesRoutes = Router();
 
-const upload = multer({
-    dest: "./tmp"
-})
+const uploadCategories = multer(uploadConfig.upload("./tmp/icons"));
 
-categoriesRoutes.post("/", (request, response) => {
-    return createCategoryController.handle(request, response);
-});
+const createCategoryController = new CreateCategorycontroller()
+const listCategoriesController = new ListCategoriesController()
 
-categoriesRoutes.get("/", (request, response) => {
-    return listcategoriesController.handle(request, response)
-})
+categoriesRoutes.post("/",uploadCategories.single("icon") ,createCategoryController.handle);
 
-categoriesRoutes.post("/import", upload.single("file"), (request, response) => {
-    return importCategoryController.handle(request, response)
-})
+categoriesRoutes.get("/", listCategoriesController.handle)
+
 
 export { categoriesRoutes };
