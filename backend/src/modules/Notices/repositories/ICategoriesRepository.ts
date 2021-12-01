@@ -3,7 +3,7 @@ import { Category } from "../entities/Category";
 interface ICategoryDTO {
     name: string;
     description: string;
-    icon: string
+    icon: string;
 }
 
 interface ICategoriesRepository {

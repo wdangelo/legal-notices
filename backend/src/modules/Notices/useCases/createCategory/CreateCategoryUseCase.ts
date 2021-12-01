@@ -4,7 +4,7 @@ import { ICategoriesRepository } from "../../repositories/ICategoriesRepository"
 interface IRequest {
     name: string;
     description: string;
-    icon: string
+    icon: string;
 }
 
 @injectable()

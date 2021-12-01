@@ -13,7 +13,7 @@ const uploadCategories = multer(uploadConfig.upload("./tmp/icons"));
 const createCategoryController = new CreateCategorycontroller()
 const listCategoriesController = new ListCategoriesController()
 
-categoriesRoutes.post("/",uploadCategories.single("icon") ,createCategoryController.handle);
+categoriesRoutes.post("/", uploadCategories.single("icon"), createCategoryController.handle);
 
 categoriesRoutes.get("/", listCategoriesController.handle)
 

@@ -1,10 +1,17 @@
-import { useHistory } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 import "./style.css"
 
-import folha from '../../assets/icons/folha.svg';
-import central from '../../assets/icons/centralatendimento.svg';
-import map from '../../assets/icons/map.svg';
+import api from '../../services/api';
+
+
+interface Categorie {
+    name: string;
+    description: string;
+    icon: string;
+}
+
 
 
 const ListPDF = {
@@ -17,6 +24,14 @@ const ListPDF = {
 
 export default function Category(){
     const history = useHistory();
+    const [categories, setCategories] = useState<Categorie[]>([])
+
+    useEffect(() => {
+        api.get('categories').then( res => {
+            setCategories(res.data)
+        })
+      }, [])
+
 
     function handlePDF(){
         sessionStorage.clear()
@@ -28,78 +43,39 @@ export default function Category(){
         history.push(`/notice`)
     }
 
-    function handleCallCEnter(){
-        sessionStorage.clear()
-        history.push(`/callcenter`)
-    }
+
     return(
-        <>
         <div className="category-body">
+            
             <table>
+            <tr>
+                {categories.map(categorie => {
+                    return(
+                        <td>
+                        <Link to={`/category/${categorie}`} >
+                            <div className="category">
+                                
+                                <button>
+                                    <img src={`http://localhost:3330/icons/${categorie.icon}`} alt="Pasta de aviso legais" />
+                                    <h3>{categorie.name}</h3>
+                                </button>
+                                
+                                
+                            </div>
+                        </Link>
 
-                <tr>
-                    <td>
+                        </td>
+    
 
-                        <div onClick={handleCallCEnter} className="category">
-                            
-                            <button>
-                                <img src={central} alt="Pasta de aviso legais" />
-                                <h3>Central de Atendimentos </h3>
-                            </button>
-                            
-                            
-                        </div>
-                    </td>
-
-                    <td>
-
-                        <div onClick={handleNotice} className="category">
-                            
-                            <button>
-                                <img src={folha} alt="Pasta de aviso legais" />
-                                <h3>Avisos</h3>
-                            </button>
-
-                            
-                        </div>
-                    </td>
+                    )
+                })}
                 </tr>
 
-                <tr>
-                    <td>
 
-                        <div onClick={handlePDF} className="category">
-                            
-                            <button>
-                                <img src={map} alt="Pasta de aviso legais" />
-                                <h3>Rede de Atendimento</h3>
-                            </button>
-
-                            
-                        </div>
-                    </td>
-
-                    <td>
-
-                        <div onClick={handlePDF} className="category">
-                            
-                            <button>
-                                <img src={folha} alt="Pasta de aviso legais" />
-                                <h3>Avisos Obrigatórios</h3>
-                            </button>
-
-                            
-                        </div>
-                    </td>
-                </tr>
-
-                
 
             </table>
 
         </div>
 
-
-        </>
     )
 }

@@ -21,8 +21,8 @@ export class CreateSubCategories1636393834032 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "icon",
-                        type: "varchar"
+                        name: "categorie_id",
+                        type: "uuid"
                     },
                     {
                         name: "created_at",
